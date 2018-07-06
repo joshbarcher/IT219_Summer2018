@@ -1,3 +1,4 @@
+package consoleio;
 
 public class Decomposition 
 {

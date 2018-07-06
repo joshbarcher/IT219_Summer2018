@@ -1,3 +1,4 @@
+package consoleio;
 
 import java.util.Scanner;
 
