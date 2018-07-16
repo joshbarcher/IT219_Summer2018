@@ -5,8 +5,17 @@ public class LoopsPractice
 	{
 		//forLoops();
 		//printingWithForLoops();
-		printBox(7, 4);
+		//printBox(7, 4);
+		//printStair(3);
+		//multTable();
+		//sum();
+		//average();
+		//foo();
+		breakAndContinue();
 	}
+	
+	//for loops
+	//*************************************************
 	
 	public static void forLoops()
 	{
@@ -75,12 +84,147 @@ public class LoopsPractice
 			System.out.println();
 		}
 	}
+	
+	public static void printStair(int rows)
+	{
+		for (int i = 1; i <= rows; i++)
+		{
+			//draw all the cols for this row
+			for (int j = 1; j <= i; j++)
+			{
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+	
+	public static void multTable()
+	{
+		for (int i = 1; i <= 10; i++)
+		{
+			for (int j = 1; j <= 10; j++)
+			{
+				//get our value
+				int value = i * j;
+				
+				//make sure this is two spaces wide
+				String displayValue = String.valueOf(value);
+				if (displayValue.length() == 1)
+				{
+					displayValue += " ";
+				}
+				
+				//show it
+				System.out.print(displayValue + " ");
+			}
+			System.out.println();
+		}
+	}
+
+	//while loops
+	//*************************************************
+	
+	public static void whileLoops()
+	{
+		//general form
+		boolean condition = true;
+		while (condition)
+		{
+			//make sure to approach your stopping condition
+			condition = false;
+		}
+	}
+	
+	public static void sum()
+	{
+		//ask the user for positive numbers until they enter
+		//a negative number, afterwards I'll print the sum
+		//of the entered numbers (without the negative)
+		
+		int input = 0;
+		int sum = 0;
+		while (input >= 0)
+		{
+			//get a number from the user
+			input = Console.getInt("Number?");
+			
+			//increment my sum, but only if non-negative
+			if (input >= 0)
+			{
+				sum += input;
+			}
+		}
+		
+		System.out.println("Sum: " + sum);
+	}
+	
+	public static void average()
+	{
+		//sum the numbers from 1 to 20 and print their average
+		
+		//for-loop version
+		final int MAX = 22;
+		double sum = 0;
+		for (int i = 1; i <= MAX; i++)
+		{
+			sum += i;
+		}
+		double average = sum / MAX;
+		System.out.println("Avg: " + average);
+		
+		//while loop
+		int i = 1;
+		while (i <= MAX)
+		{
+			sum += i;
+			
+			i++;
+		}
+		average = sum / MAX;
+		System.out.println("Avg: " + average);
+	}
+
+	//do-while loops
+	//*************************************************
+	
+	public static void doWhileLoops()
+	{
+		boolean condition = true;
+		do
+		{
+			//make sure you approach a stopping condition
+			condition = true;
+		} while (condition);
+		
+		String favShow;
+		boolean areYouSure = false;
+		do
+		{
+			favShow = Console.getString("Favorite show on Netflix?");
+			areYouSure = Console.getBoolean("Are you sure?");
+		} while (!areYouSure);
+	}
+	
+	//break & continue
+	//*************************************************
+	
+	public static void breakAndContinue()
+	{
+		int num = 1;
+		while (true)
+		{
+			//update num
+			if (num % 2 != 0)
+			{
+				num++;
+				continue;
+			}
+			System.out.println(num++);
+			
+			if (num > 10)
+			{
+				break; //exit the loop!
+			}
+		}
+	}
 }
-
-
-
-
-
-
-
-
