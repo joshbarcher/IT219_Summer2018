@@ -4,6 +4,9 @@ public class StringsPractice
 {
 	public static void main(String[] args) 
 	{
+		//different ways to declare strings
+		//************************************************
+		
 		String story = "It all began with a ...";
 		String catStory = new String("The cat walked over to the fence...");
 		
