@@ -1,15 +1,37 @@
 package basics;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.Random;
 
 public class ArraysPractice 
 {
+	//we only ever want to use one Random object
+	private static Random random = new Random();
+	
 	public static void main(String[] args) 
 	{
 		creatingArrays();
 		loopingOverArrays();
 		shortHandNotation();
 		usingObjectsInArrays();
+		
+		int[] randomArray = getRandomArray(3, 13, 100);
+		System.out.println(Arrays.toString(randomArray));
+		double average = getAverage(randomArray);
+		System.out.println(average);
+		System.out.println();
+		
+		System.out.println(getAverage(getRandomArray(1, 10, 10)));
+		System.out.println(getAverage(getRandomArray(1, 10, 100)));
+		System.out.println(getAverage(getRandomArray(1, 10, 1000)));
+		System.out.println(getAverage(getRandomArray(1, 10, 10000)));
+		System.out.println(getAverage(getRandomArray(1, 10, 100000)));
+		System.out.println(getAverage(getRandomArray(1, 10, 1000000)));
+		System.out.println(getAverage(getRandomArray(1, 10, 10000000)));
+		System.out.println(getAverage(getRandomArray(1, 10, 100000000)));
+	
+		return;
 	}
 	
 	public static void creatingArrays()
@@ -86,6 +108,42 @@ public class ArraysPractice
 		{
 			System.out.println(dates[i]);
 		}
+	}
+	
+	public static double getAverage(int[] array)
+	{
+		double sum = 0;
+		
+		for (int i = 0; i < array.length; i++)
+		{
+			sum += array[i];
+		}
+		
+		return sum / array.length;
+	}
+	
+	public static int[] getRandomArray(int low, int high,
+			                           int arraySize)
+	{
+		//create an array of the requested size
+		int[] results = new int[arraySize];
+		
+		//fill the array with random numbers
+		for (int i = 0; i < results.length; i++)
+		{
+			int number = randomNumber(low, high);
+			results[i] = number;
+		}
+		
+		return results;
+	}
+	
+	public static int randomNumber(int low, int high)
+	{
+		int possibleValues = high - low + 1;
+		int number = random.nextInt(possibleValues);
+		
+		return number + low;
 	}
 }
 
