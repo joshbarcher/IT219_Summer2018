@@ -50,7 +50,7 @@ public class PairProgramming
 		}
 		
 		int max = (int)Math.ceil(Math.sqrt(n));
-		for (int i = 2; i < max; i++)
+		for (int i = 2; i <= max; i++)
 		{
 			if (n % i == 0)
 			{
