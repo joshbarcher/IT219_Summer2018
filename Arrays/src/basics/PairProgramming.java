@@ -48,6 +48,10 @@ public class PairProgramming
 		{
 			return false;
 		}
+		else if (n == 2)
+		{
+			return true;
+		}
 		
 		int max = (int)Math.ceil(Math.sqrt(n));
 		for (int i = 2; i <= max; i++)
