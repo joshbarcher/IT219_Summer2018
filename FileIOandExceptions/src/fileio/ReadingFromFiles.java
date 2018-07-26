@@ -4,12 +4,13 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class FileInputOutput 
+public class ReadingFromFiles 
 {
 	public static void main(String[] args) 
 	{
-		System.out.println("Lines: "  + linesInFile("war and peace.txt"));
-		System.out.println("Characters: "  + charactersInFile("war and peace.txt"));
+		readingFiles();
+		//System.out.println("Lines: "  + linesInFile("files/war and peace.txt"));
+		//System.out.println("Characters: "  + charactersInFile("files/war and peace.txt"));
 	}
 	
 	public static int charactersInFile(String fileName)
@@ -67,7 +68,7 @@ public class FileInputOutput
 	{
 		try 
 		{
-			FileInputStream reader = new FileInputStream("war and peace.txt");
+			FileInputStream reader = new FileInputStream("files/war and peace.txt");
 			Scanner fileReader = new Scanner(reader);
 			
 			//read a line from the file and print it out
