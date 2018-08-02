@@ -7,7 +7,7 @@ public class Dog
 	private boolean domesticated;
 	private double weight;
 	
-	//constructors
+	//constructor (parameterized)
 	public Dog(String newBreed, boolean isDomesticated, 
 			   double newWeight)
 	{
@@ -16,6 +16,7 @@ public class Dog
 		weight = newWeight;
 	}
 	
+	//constructor (default)
 	public Dog()
 	{
 		//pick some sensible defaults
